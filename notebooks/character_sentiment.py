@@ -92,3 +92,49 @@ ax1.legend(lines + lines2, labels + labels2, loc='upper left')
 
 plt.title("Narrative Arc: Sentiment & Pronoun Flow")
 plt.show()
+
+'''Explanation of Sentiment Analysis in Your Code
+
+Sentiment Analysis Definition
+Sentiment analysis is a method in Natural Language Processing (NLP) to detect the emotional tone of a piece of text: positive, negative, or neutral.
+
+Tool Used
+You are using VADER (Valence Aware Dictionary for Sentiment Reasoning), which is especially good for literary text or social media. It gives a compound score for each sentence:
+
+-1 → extremely negative
+
+0 → neutral
+
++1 → extremely positive
+
+Sentence-Level Scoring
+In your code, each sentence of the book is analyzed individually:
+
+sia.polarity_scores(sentence)['compound']
+
+
+This gives a number for the emotional content of that sentence.
+
+Chapter-Level Aggregation
+Sentences are grouped by chapter:
+
+chapter_scores.append(sum(compute_sentiment(current)) / len(current))
+
+
+The average compound score of all sentences in a chapter represents the overall emotional tone of that chapter.
+
+High positive → happy, relieved, or uplifting chapters.
+
+High negative → tense, threatening, or climactic chapters.
+
+Narrative Arc
+By plotting these chapter-level sentiment scores, you can see the emotional ups and downs of the story, which often corresponds to:
+
+Rising tension → negative dips
+
+Climax → extreme negative or positive
+
+Resolution → neutral or positive recovery
+
+Enhancement with Pronouns
+Tracking pronouns alongside sentiment shows character activity, giving context to when a character is emotionally involved in the story.'''
