@@ -1,3 +1,5 @@
+matplotlib
+nltk
 spacy
 # Basic dependencies
 # Optional NLP & analysis (uncomment as needed)
